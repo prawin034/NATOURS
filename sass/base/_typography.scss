@@ -1,0 +1,47 @@
+body {
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.7;
+}
+
+.heading-secondary {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  background-image: linear-gradient(to left, $color-primary, $color-secondary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.4s;
+  letter-spacing: 2px;
+  margin-bottom: 10rem;
+  &:hover {
+    transform: skewY(2deg);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-dark, 0.2);
+    cursor: pointer;
+  }
+
+  @include respond(TAB-PORT) {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  @include respond(PHONE) {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.teritary-heading {
+  font-size: $default-fontsize;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-fontsize;
+  text-transform: capitalize;
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}

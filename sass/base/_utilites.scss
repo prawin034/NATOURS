@@ -1,0 +1,19 @@
+.u-center-text {
+  text-align: center;
+  backface-visibility: hidden;
+}
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+  @include respond(TAB-PORT) {
+    margin-bottom: 3rem !important;
+  }
+}
+.u-margin-bottom-big {
+  margin-bottom: 8rem;
+  @include respond(TAB-PORT) {
+    margin-bottom: 5rem !important;
+  }
+}

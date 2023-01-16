@@ -1,0 +1,73 @@
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      $color-primary,
+      $color-secondary
+    ),
+    url('../img/hero.jpg');
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 77vh, 0 100%);
+
+  @include respond(PHONE) {
+    clip-path: polygon(0 0, 100% 0, 100% 87vh, 0 100%);
+  }
+  @include respond(TAB-PORT) {
+    clip-path: polygon(0 0, 100% 0, 100% 87vh, 0 100%);
+  }
+
+  &_box {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  &_main {
+    font-size: 7rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: $color-light;
+    letter-spacing: 50px;
+    display: block;
+    animation: moveInleft 1.2s ease-in-out;
+
+    @include respond(TAB-PORT) {
+      letter-spacing: 2rem;
+      font-size: 6rem;
+    }
+    @include respond(PHONE) {
+      font-size: 4rem;
+      letter-spacing: 1rem;
+    }
+  }
+
+  &_sub {
+    font-size: 2rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: $color-light;
+    letter-spacing: 25px;
+    display: block;
+    animation: moveInRight 1.2s ease-in-out;
+    @include respond(TAB-PORT) {
+      letter-spacing: 0.5rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  &_logo_box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    @include respond(TAB-PORT) {
+      top: 25px;
+      left: 30px;
+    }
+  }
+  &_logo_img {
+    height: 4rem;
+  }
+}

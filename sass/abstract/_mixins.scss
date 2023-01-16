@@ -1,0 +1,56 @@
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin transformCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER [DESKTOP FIRST APPROACH]
+/*
+0-600PX      - PHONE 
+600PX-900PX  - TABLET & PORTRAIT
+900PX-1200PX - TABLET & LANDSCAPE 
+1200PX-1800  - DESKTOPS
+1800+        - BIG DESKTOPS
+
+
+$BREAKPOINTS ARGUMENT CHOICES 
+-PHONE 
+-TAB-PORT
+-TAB-LAND
+-BIG-DESKTOP
+
+ORDER - BASE+ TYPOGRAPHY >BASE LAYOUT +GRID >PAGE LAYOUT
+
+*/
+
+@mixin respond($BREAKPOINTS) {
+  @if $BREAKPOINTS == PHONE {
+    @media (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $BREAKPOINTS == TAB-PORT {
+    @media (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+  @if $BREAKPOINTS ==TAB-LAND {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $BREAKPOINTS == BIG-DESKTOP {
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+}

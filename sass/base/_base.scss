@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; //1rem = 10px
+
+  @include respond(TAB-LAND) {
+    font-size: 56.25%; //1rem = 9px
+  }
+  @include respond(TAB-PORT) {
+    font-size: 50%; //1rem=8px
+  }
+  @include respond(BIG-DESKTOP) {
+    font-size: 75%; //1rem = 12px
+  }
+}
+
+body {
+  color: grey;
+  padding: 2rem;
+
+  @include respond(TAB-PORT) {
+    padding: 0;
+  }
+}

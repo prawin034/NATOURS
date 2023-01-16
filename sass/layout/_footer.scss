@@ -1,0 +1,47 @@
+.footer {
+  padding: 15rem 0;
+  background-color: #27272a;
+
+  &_logo_box {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  &_logo {
+    height: 10rem;
+  }
+  &_navigation {
+    border-top: 2px solid #fff;
+    @include respond(TAB-PORT) {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+  &_list {
+    list-style: none;
+    margin-top: 1rem;
+  }
+  &_item {
+    display: inline-block;
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+    &:hover {
+      transform: scaleY(2deg);
+    }
+  }
+  &_link {
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+      color: #ccc;
+    }
+  }
+  &_copyright {
+    border-top: 2px solid #fff;
+    @include respond(TAB-PORT) {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+}

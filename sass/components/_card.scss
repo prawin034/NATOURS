@@ -1,0 +1,141 @@
+.card {
+  //functionality
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem;
+  &__side {
+    // background-color: cadetblue;
+    height: 50rem;
+    transition: all 2s ease;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1rem 3rem rgba($color-dark, 0.15);
+    overflow: hidden;
+    &--front {
+      background-color: #fff;
+    }
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background: #373b44;
+        background: -webkit-linear-gradient(to right bottom, #4286f4, #373b44);
+        background: linear-gradient(to right bottom, #4286f4, #373b44);
+      }
+      &-2 {
+        background: #000000;
+        background: -webkit-linear-gradient(to right bottom, #0f9b0f, #000000);
+        background: linear-gradient(to right bottom, #0f9b0f, #000000);
+      }
+      &-3 {
+        background: #2193b0;
+        background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);
+        background: linear-gradient(to right, #6dd5ed, #2193b0);
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  //front style styling
+
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, #4286f4, #373b44),
+        url('../../img/nat-5.jpg');
+      background-blend-mode: screen;
+    }
+    &--2 {
+      background-image: linear-gradient(to right bottom, #0f9b0f, #000000),
+        url('../../img/nat-6.jpg');
+      background-blend-mode: screen;
+    }
+    &--3 {
+      background-image: linear-gradient(to right bottom, #6dd5ed, #2193b0),
+        url('../../img/nat-7.jpg');
+      background-blend-mode: screen;
+    }
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #fff;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    text-align: right;
+    width: 75%;
+  }
+  &__heading-span {
+    padding: 1rem;
+    padding-left: 1rem;
+    box-decoration-break: clone;
+    &--1 {
+      background-image: linear-gradient(to right bottom, #4286f4, #373b44);
+    }
+    &--2 {
+      background-image: linear-gradient(to right bottom, #0f9b0f, #000000);
+    }
+    &--3 {
+      background-image: linear-gradient(to right bottom, #6dd5ed, #2193b0);
+    }
+  }
+  &__details {
+    padding-top: 3rem;
+    ul {
+      list-style: none;
+      width: 90%;
+      margin: 0 auto;
+      li {
+        color: #373b44;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid #373b44;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__price-box {
+    margin-bottom: 2rem;
+  }
+  &__price-only {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 300;
+  }
+  &__price-value {
+    font-size: 6rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 100;
+  }
+}
