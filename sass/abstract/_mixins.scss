@@ -34,22 +34,22 @@ ORDER - BASE+ TYPOGRAPHY >BASE LAYOUT +GRID >PAGE LAYOUT
 
 @mixin respond($BREAKPOINTS) {
   @if $BREAKPOINTS == PHONE {
-    @media (max-width: 37.5em) {
+    @media only screen and (max-width: 37.5em) {
       @content;
     } //600px
   }
   @if $BREAKPOINTS == TAB-PORT {
-    @media (max-width: 56.25em) {
+    @media only screen and (max-width: 56.25em) {
       @content;
     } //900px
   }
   @if $BREAKPOINTS ==TAB-LAND {
-    @media (max-width: 75em) {
+    @media only screen and (max-width: 75em) {
       @content;
     }
   }
   @if $BREAKPOINTS == BIG-DESKTOP {
-    @media (min-width: 112.5em) {
+    @media only screen and (min-width: 112.5em) {
       @content;
     }
   }
