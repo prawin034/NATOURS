@@ -6,10 +6,19 @@
       $color-primary,
       $color-secondary
     ),
-    url('../img/hero.jpg');
+    url('../img/hero-small.jpg');
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 77vh, 0 100%);
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 1500px) {
+    background-image: linear-gradient(
+        to right bottom,
+        $color-primary,
+        $color-secondary
+      ),
+      url('../img/hero.jpg');
+  }
 
   @include respond(PHONE) {
     clip-path: polygon(0 0, 100% 0, 100% 87vh, 0 100%);

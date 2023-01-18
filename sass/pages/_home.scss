@@ -16,11 +16,20 @@
       $color-primary,
       $color-secondary
     ),
-    url('../img/hero.jpg');
+    url('../img/hero-small.jpg');
   background-size: cover;
   background-position: top;
 
   transform: skewY(-7deg);
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 1500px) {
+    background-image: linear-gradient(
+        to right bottom,
+        $color-primary,
+        $color-secondary
+      ),
+      url('../img/hero.jpg');
+  }
 
   & > * {
     transform: skewY(7deg);
@@ -68,13 +77,39 @@
     ),
     url('../../img/nat-10.jpg');
 
-  background-size: cover;
-  height: 60rem;
+  background-size: 100%;
+
+  @include respond(TAB-LAND) {
+    background-image: linear-gradient(
+        105deg,
+        rgba(255, 255, 255, 0.847) 0%,
+        rgba(252, 252, 252, 0.916) 65%,
+        transparent 65%
+      ),
+      url('../../img/nat-10.jpg');
+    background-size: cover;
+  }
+  @include respond(TAB-PORT) {
+    background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.847) 0%,
+        rgba(252, 252, 252, 0.916) 100%
+      ),
+      url('../../img/nat-10.jpg');
+    background-size: cover;
+  }
 
   box-shadow: 0 2rem 6rem rgba($color-dark, 0.15);
 
   &__form {
     width: 50%;
     padding: 6rem;
+
+    @include respond(TAB-LAND) {
+      width: 65%;
+    }
+    @include respond(TAB-PORT) {
+      width: 100%;
+    }
   }
 }

@@ -14,6 +14,10 @@
     border-bottom: 3px solid transparent;
     width: 90%;
     display: block;
+
+    @include respond(TAB-PORT) {
+      width: 100%;
+    }
     &::-webkit-input-placeholder {
       color: #10b981;
     }
@@ -47,6 +51,10 @@
   &__radio_group {
     width: 49%;
     display: inline-block;
+    @include respond(TAB-PORT) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
   &__radio_label {
     font-size: 1.4rem;
